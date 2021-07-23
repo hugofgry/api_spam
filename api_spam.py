@@ -6,7 +6,7 @@ import os
 from fastapi.responses import JSONResponse
 import psycopg2 as pg
 import pandas as pd
-from token import Token
+from tokenized import Tokenize
 
 app = FastAPI()
 # Connection a la base sqlite
