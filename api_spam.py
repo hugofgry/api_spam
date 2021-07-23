@@ -1,9 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
-import urllib.request
 import json
 import sys
-import pandas as pd
 import os
 from fastapi.responses import JSONResponse
 import psycopg2 as pg
