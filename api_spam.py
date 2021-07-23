@@ -5,6 +5,7 @@ import sys
 import os
 from fastapi.responses import JSONResponse
 import psycopg2 as pg
+import pandas as pd
 
 app = FastAPI()
 # Connection a la base sqlite
@@ -30,3 +31,11 @@ async def ham_message ():
     ham = c.fetchall()
     conn.commit()
     return ham
+
+@app.get("/df")
+async def df ():
+    c.execute("SELECT * FROM spam_message ;")
+    ham_df = c.fetchall()
+    conn.commit()
+    df = pd.DataFrame(ham_df)
+    return df
