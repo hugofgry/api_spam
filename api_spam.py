@@ -6,6 +6,7 @@ import os
 from fastapi.responses import JSONResponse
 import psycopg2 as pg
 import pandas as pd
+from token import Token
 
 app = FastAPI()
 # Connection a la base sqlite
@@ -18,7 +19,7 @@ c = conn.cursor()
 
 
 
-@app.get("/spam")
+@app.get(f"/{token}/spam")
 async def spam_message ():
     c.execute("SELECT * FROM spam_message WHERE type= 'spam';")
     spam = c.fetchall()
