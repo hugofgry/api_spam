@@ -1,8 +1,6 @@
 from fastapi import FastAPI
 import sqlite3
 import uvicorn
-from sqlite3 import connect
-from bs4 import BeautifulSoup
 import urllib.request
 import json
 import sys
