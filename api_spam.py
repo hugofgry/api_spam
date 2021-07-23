@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-import sqlite3
 import uvicorn
 import urllib.request
 import json
