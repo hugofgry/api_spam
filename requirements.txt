@@ -1,5 +1,6 @@
 fastapi
 uvicorn
+streamlit
 dnspython
 Psycopg2
 Pandas
