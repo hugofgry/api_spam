@@ -1,7 +1,7 @@
 
 Streamlit
 dnspython
-Psycop2
+Psycopg2
 Requests
 
 
