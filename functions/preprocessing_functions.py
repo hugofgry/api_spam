@@ -2,7 +2,7 @@ import pandas as pd
 import string
 from nltk.corpus import stopwords
 from collections import Counter
-
+nltk.download()
 
 # Remove punctuation and stopwords
 def remove_punctuation_and_stopwords(sms):
