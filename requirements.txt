@@ -1,6 +1,7 @@
-fastapi
-uvicorn
-streamlit
+fastapi 
+pydantic 
 dnspython
-Psycopg2
-Pandas
+streamlit
+uvicorn
+requests
+psycopg2
