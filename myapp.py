@@ -13,16 +13,16 @@ st.title('Spam or ham ?')
 # Load data
 data = requests.get('https://db-spam.herokuapp.com/all').json()
 data = pd.DataFrame(data)
-data = data.rename(columns={0:'label', 1:'text'})
+data = data.rename(columns={1:'label', 2:'text'})
 
 # Add numerical target - 0=ham / 1=spam and length messages
 data_final = data.copy()
-data_final['spam'] = data_final['label'].map({'ham':0, 'spam':1})
+data_final['spam'] = data_final['label'].map({'ham':1, 'spam':2})
 data_final['length'] = data_final['text'].apply(len)
 
 # Separate ham and spam messages
-data_ham  = data_final[data_final['spam'] == 0]
-data_spam = data_final[data_final['spam'] == 1]
+data_ham  = data_final[data_final['spam'] == 1]
+data_spam = data_final[data_final['spam'] == 2]
 
 # Navigation menu
 st.sidebar.title('Menu de navigation')
