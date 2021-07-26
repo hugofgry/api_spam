@@ -9,7 +9,8 @@ Sklearn
 Seaborn
 numpy
 String
-
+Nltk 
+Collections
 
 
 
