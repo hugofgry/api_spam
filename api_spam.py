@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import Depends,FastAPI
 import uvicorn
 import json
 import sys
@@ -6,7 +6,9 @@ import os
 from fastapi.responses import JSONResponse
 import psycopg2 as pg
 import pandas as pd
-from tokenized import Tokenize
+
+
+
 
 app = FastAPI()
 # Connection a la base sqlite
@@ -17,26 +19,33 @@ conn = pg.connect(database="d9f6fj4b8b8dc8",
           port = "5432")
 c = conn.cursor()
 
+app = FastAPI()
 
 
-@app.get(f"/{token}/spam")
-async def spam_message ():
+
+@app.get('/all')
+async def all_data():
+
+  c.execute("SELECT * FROM spam_message ;")
+  all = c.fetchall()
+  conn.commit()
+  return all
+
+
+@app.get("/spam")
+async def spam_message():
+
     c.execute("SELECT * FROM spam_message WHERE type= 'spam';")
     spam = c.fetchall()
     conn.commit()
     return spam
 
+
 @app.get("/ham")
-async def ham_message ():
+async def ham_message():
+
     c.execute("SELECT * FROM spam_message WHERE type= 'ham';")
     ham = c.fetchall()
     conn.commit()
     return ham
 
-@app.get("/df")
-async def df ():
-    c.execute("SELECT * FROM spam_message ;")
-    ham_df = c.fetchall()
-    conn.commit()
-    df = pd.DataFrame(ham_df)
-    return df
