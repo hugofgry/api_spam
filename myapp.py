@@ -11,7 +11,7 @@ st.title('Spam or ham ?')
 ##### PREPARATION PAGES ###
 
 # Load data
-data = requests.get('http://127.0.0.1:8000/all').json()
+data = requests.get('https://db-spam.herokuapp.com/all').json()
 data = pd.DataFrame(data)
 data = data.rename(columns={0:'label', 1:'text'})
 
