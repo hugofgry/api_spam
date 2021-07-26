@@ -4,7 +4,7 @@ dnspython
 Psycopg2
 Requests
 Plotly
-
+Matplotlib
 
 
 
