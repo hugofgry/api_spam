@@ -1,7 +1,10 @@
-fastapi 
 
+Streamlit
 dnspython
+Psycop2
+Requests
 
-uvicorn
 
-psycopg2
+
+
+
