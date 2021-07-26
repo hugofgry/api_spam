@@ -3,6 +3,7 @@ Streamlit
 dnspython
 Psycopg2
 Requests
+Plotly
 
 
 
