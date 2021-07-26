@@ -5,7 +5,7 @@ import sys
 import os
 from fastapi.responses import JSONResponse
 import psycopg2 as pg
-import pandas as pd
+
 
 
 
