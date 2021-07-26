@@ -5,6 +5,10 @@ Psycopg2
 Requests
 Plotly
 Matplotlib
+Sklearn
+Seaborn
+numpy
+String
 
 
 
